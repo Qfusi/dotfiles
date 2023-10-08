@@ -45,7 +45,7 @@
         "defaults": {
             "colorScheme": "One Half Dark (modded)",
             "font": {
-                "face": "Hack NF"
+                "face": "Fira Code"
             },
             "opacity": 40,
             "useAcrylic": true
@@ -60,7 +60,7 @@
             {
                 "colorScheme": "One Half Dark",
                 "font": {
-                    "face": "Hack NF",
+                    "face": "Fira Code",
                     "size": 11
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",

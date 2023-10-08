@@ -27,7 +27,7 @@ choco install -y nvm
 # ---------------------------------------------- #
 # PowerShell  ---------------------------------- #
 # ---------------------------------------------- #
-winget install -e -h --id Microsoft.PowerShell --accept-source-agreements --accept-package-agreements
+choco install -y powershell-core
 RefreshEnv
 
 # ---------------------------------------------- #
@@ -35,8 +35,8 @@ RefreshEnv
 # ---------------------------------------------- #
 pwsh -Command { Install-Module posh-git -Scope CurrentUser -Force } > $null
 pwsh -Command { Install-Module Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force } > $null
-winget install -e -h --id JanDeDobbeleer.OhMyPosh
-choco install -y nerd-fonts-hack
+choco install -y oh-my-posh
+choco install -y firacode
 
 # ---------------------------------------------- #
 # Windows Terminal ----------------------------- #
@@ -46,8 +46,8 @@ choco install -y microsoft-windows-terminal
 # ---------------------------------------------- #
 # IDEs ----------------------------------------- #
 # ---------------------------------------------- #
-winget install -e -h --id Microsoft.VisualStudio.2022.Professional --silent --override "--wait --quiet --addProductLang En-us --config $env:USERPROFILE\Documents\dev-env-setup\configs\vs2022\.vsconfig"
-winget install -e -h --id JetBrains.Toolbox
+choco install -y visualstudio2022professional
+choco install -y jetbrains-rider
 choco install -y vscode
 RefreshEnv
 $extensions = @(
@@ -56,6 +56,7 @@ $extensions = @(
     "eamodio.gitlens"
     "teabyii.ayu"
     "esbenp.prettier-vscode"
+    "vue.volar"
     "formulahendry.auto-close-tag"
     "formulahendry.auto-rename-tag"
     "jorgeserrano.vscode-csharp-snippets"

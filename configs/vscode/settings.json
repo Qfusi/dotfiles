@@ -1,12 +1,14 @@
 {
   "workbench.colorTheme": "Ayu Dark Bordered",
-  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
   "editor.fontSize": 13,
-  "editor.fontLigatures": false,
-  "editor.formatOnPaste": true,
   "editor.lineHeight": 22,
-  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.fontWeight": 400,
+  "editor.formatOnPaste": true,
   "editor.smoothScrolling": true,
+  "explorer.compactFolders": false,
+  "editor.unicodeHighlight.nonBasicASCII": false,
   "security.workspace.trust.untrustedFiles": "open",
   "files.autoSave": "afterDelay",
   "redhat.telemetry.enabled": false,
@@ -15,7 +17,8 @@
     "**/.vs": true,
     "**/.vscode": true,
     "**/bin": true,
-    "**/obj": true
+    "**/obj": true,
+    "**/node_modules": true
   },
   "omnisharp.loggingLevel": "critical",
   "terminal.integrated.profiles.windows": {
