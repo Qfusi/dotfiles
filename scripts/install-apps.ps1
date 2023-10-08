@@ -14,7 +14,7 @@ choco install -y zoomit
 choco install -y everything
 choco install -y notepadplusplus
 choco install -y grepwin
-winget install -e -h --id Microsoft.PowerToys --accept-source-agreements --accept-package-agreements
+choko install -y powertoys
 
 # ---------------------------------------------- #
 # Dev tools  ----------------------------------- #
@@ -22,7 +22,7 @@ winget install -e -h --id Microsoft.PowerToys --accept-source-agreements --accep
 choco install -y insomnia-rest-api-client
 choco install -y sql-server-management-studio
 choco install -y rdcman
-winget install -e -h --id CoreyButler.NVMforWindows --accept-source-agreements --accept-package-agreements
+choco install -y nvm
 
 # ---------------------------------------------- #
 # PowerShell  ---------------------------------- #
@@ -51,25 +51,25 @@ winget install -e -h --id JetBrains.Toolbox
 choco install -y vscode
 RefreshEnv
 $extensions = @(
-        "adrianwilczynski.blazor-snippet-pack"
-        "DotJoshJohnson.xml"
-        "eamodio.gitlens"
-        "teabyii.ayu"
-        "esbenp.prettier-vscode"
-        "formulahendry.auto-close-tag"
-        "formulahendry.auto-rename-tag"
-        "jorgeserrano.vscode-csharp-snippets"
-        "ms-azuretools.vscode-docker"
-        "ms-dotnettools.blazorwasm-companion"
-        "ms-dotnettools.csdevkit"
-        "ms-dotnettools.vscode-dotnet-runtime"
-        "ms-kubernetes-tools.vscode-kubernetes-tools"
-        "ms-vscode-remote.remote-containers"
-        "ms-vscode.powershell"
-        "redhat.vscode-yaml"
-        "ritwickdey.LiveServer"
-        "bierner.markdown-preview-github-styles"
-        "zxh404.vscode-proto3"
+    "adrianwilczynski.blazor-snippet-pack"
+    "DotJoshJohnson.xml"
+    "eamodio.gitlens"
+    "teabyii.ayu"
+    "esbenp.prettier-vscode"
+    "formulahendry.auto-close-tag"
+    "formulahendry.auto-rename-tag"
+    "jorgeserrano.vscode-csharp-snippets"
+    "ms-azuretools.vscode-docker"
+    "ms-dotnettools.blazorwasm-companion"
+    "ms-dotnettools.csdevkit"
+    "ms-dotnettools.vscode-dotnet-runtime"
+    "ms-kubernetes-tools.vscode-kubernetes-tools"
+    "ms-vscode-remote.remote-containers"
+    "ms-vscode.powershell"
+    "redhat.vscode-yaml"
+    "ritwickdey.LiveServer"
+    "bierner.markdown-preview-github-styles"
+    "zxh404.vscode-proto3"
 );
 foreach ($extension in $extensions) {
     code --install-extension $extension

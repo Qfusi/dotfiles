@@ -1,6 +1,45 @@
 {
+  "workbench.colorTheme": "Ayu Dark Bordered",
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": false,
   "editor.formatOnPaste": true,
+  "editor.lineHeight": 22,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.smoothScrolling": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "files.autoSave": "afterDelay",
+  "redhat.telemetry.enabled": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "files.exclude": {
+    "**/.vs": true,
+    "**/.vscode": true,
+    "**/bin": true,
+    "**/obj": true
+  },
+  "omnisharp.loggingLevel": "critical",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell_7": {
+      "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "icon": "terminal-powershell"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell_7",
+  // # ---------------------------------------------------------------------------------------------#
+  // # ---------------------------------------- FORMATTERS ---------------------------------------- #
+  // # ---------------------------------------------------------------------------------------------#
   "editor.formatOnSave": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+  "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+  "prettier.useEditorConfig": true,
+  "prettier.useTabs": false,
+  "prettier.trailingComma": "none",
+  "prettier.tabWidth": 2,
+  "prettier.printWidth": 120,
+  "prettier.bracketSpacing": true,
+  "prettier.singleQuote": true,
+  "prettier.withNodeModules": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[aspnetcorerazor]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
@@ -17,33 +56,11 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "prettier.printWidth": 120,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "JetBrains Rider Dark Theme",
-  "liveServer.settings.donotShowInfoMsg": true,
-  "editor.fontLigatures": false,
-  "editor.fontSize": 13,
-  "editor.lineHeight": 22,
-  "editor.fontFamily": "JetBrains Mono",
-  "files.exclude": {
-    "**/.vs": true,
-    "**/.vscode": true,
-    "**/bin": true,
-    "**/obj": true
+  "[powershell]": {
+    "editor.defaultFormatter": "ms-vscode.powershell"
   },
-  "redhat.telemetry.enabled": false,
-  "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
-  "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
-  "files.autoSave": "afterDelay",
-  "window.zoomLevel": 1,
-  "omnisharp.enableRoslynAnalyzers": true,
-  "omnisharp.loggingLevel": "critical",
-  "editor.unicodeHighlight.nonBasicASCII": false,
-  "terminal.integrated.profiles.windows": {
-    "PowerShell_7": {
-      "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
-      "icon": "terminal-powershell"
-    }
-  },
-  "terminal.integrated.defaultProfile.windows": "PowerShell_7"
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
