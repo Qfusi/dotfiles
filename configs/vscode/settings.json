@@ -40,6 +40,7 @@
   "prettier.bracketSpacing": true,
   "prettier.singleQuote": true,
   "prettier.withNodeModules": true,
+  "prettier.semi": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[aspnetcorerazor]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
