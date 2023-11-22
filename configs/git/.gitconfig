@@ -1,5 +1,17 @@
 [core]
   editor = code --wait
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false
+[commit]
+	gpgsign = true
+[push]
+	autoSetupRemote = true
 [diff]
   tool = vscode
 [difftool "vscode"]
@@ -11,12 +23,6 @@
 [color "status"]
 	changed = cyan normal bold
 	untracked = cyan normal bold
-[pull]
-	rebase = false
-[fetch]
-	prune = false
-[rebase]
-	autoStash = false
 [alias]
 	st = status
 	br = branch -vv
