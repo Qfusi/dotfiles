@@ -7,7 +7,9 @@ Set-PSReadLineOption -BellStyle None
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 
-oh-my-posh init pwsh --config "$env:USERPROFILE\Documents\dev-env-setup\configs\oh-my-posh\star-adjusted.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\star-adjusted.omp.json" | Invoke-Expression
+
+Invoke-Expression (& { (zoxide init --cmd cd powershell | Out-String) })
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
@@ -22,7 +24,6 @@ if (Test-Path($ChocolateyProfile)) {
 # Alias
 Set-Alias g git
 Set-Alias d docker
-Set-Alias grep findstr
 
 Set-Location C:\Repos
 

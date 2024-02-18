@@ -1,0 +1,40 @@
+symlinks:
+  pwsh:
+    path: ~/Documents/Powershell/Microsoft.PowerShell_profile.ps1
+    target: powershell/Microsoft.PowerShell_profile.ps1
+    scaffold: true
+    force: true
+  oh-my-posh:
+    path: ~/AppData/Local/Programs/oh-my-posh/themes/star-adjusted.omp.json
+    target: oh-my-posh/star-adjusted.omp.json
+    scaffold: true
+    force: true
+  windows-terminal:
+    path: ~/AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+    target: windows-terminal/settings.json
+    force: true
+  vscode:
+    path: ~/AppData/Roaming/Code/User/
+    target: vscode/*
+    force: true
+  git-local:
+    path: ~/.gitconfig.local
+    target: git/.gitconfig.local
+  git:
+    path: ~/.gitconfig
+    target: git/.gitconfig
+
+plugins:
+  install-apps:
+    path: install-apps.ps1
+    prompt: true
+    order: 1
+  create-symlinks:
+    path: create-symlinks.ps1
+    order: 2
+  unbloat-windows:
+    path: unbloat-windows.ps1
+    prompt: true
+  configure-windows:
+    path: configure-windows.ps1
+    prompt: true

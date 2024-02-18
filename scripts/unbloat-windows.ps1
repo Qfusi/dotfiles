@@ -1,19 +1,12 @@
-Write-Host "--- Unbloating Windows ---" -ForegroundColor "Yellow"
+Write-Host "`n--- Unbloating Windows ---`n" -ForegroundColor "Yellow"
 
-#Referenced to build script
+# Referenced to build script
 # https://docs.microsoft.com/en-us/windows/application-management/remove-provisioned-apps-during-update
 # https://github.com/jayharris/dotfiles-windows/blob/master/windows.ps1#L157
 # https://gist.github.com/jessfraz/7c319b046daa101a4aaef937a20ff41f
 # https://gist.github.com/alirobe/7f3b34ad89a159e6daa1
 # https://github.com/W4RH4WK/Debloat-Windows-10/blob/master/scripts/remove-default-apps.ps1
 # https://gist.github.com/mrik23/e8160517b19a3a9dad9c1b5e8ba0fb78
-
-function removeApp {
-	Param ([string]$appName)
-	Write-Output "Trying to remove $appName"
-	Get-AppxPackage $appName -AllUsers | Remove-AppxPackage
-	Get-AppXProvisionedPackage -Online | Where-Object DisplayName -like $appName | Remove-AppxProvisionedPackage -Online
-}
 
 $applicationList = @(
 	"Microsoft.3DBuilder"
@@ -70,8 +63,8 @@ $applicationList = @(
 	"*Solitaire*"
 	"*Autodesk*"
 	"*BubbleWitch*"
-    "king.com*"
-    "G5*"
+	"king.com*"
+	"G5*"
 	"*Facebook*"
 	"*Keeper*"
 	"*Netflix*"
@@ -80,8 +73,20 @@ $applicationList = @(
 	"*.Duolingo-LearnLanguagesforFree"
 	"*.EclipseManager"
 	"*.AdobePhotoshopExpress"
-);
+)
 
-foreach ($app in $applicationList) {
-    removeApp $app
+function removeApp([string]$app) {
+	Write-Host "Removing $app"
+	Get-AppxPackage $app -AllUsers | Remove-AppxPackage > $null
+	Get-AppXProvisionedPackage -Online | Where-Object DisplayName -like $app | Remove-AppxProvisionedPackage -Online > $null
 }
+
+$WarningPreference = 'SilentlyContinue'
+Import-Module DISM -UseWindowsPowerShell > $null
+foreach ($app in $applicationList) {
+	removeApp $app
+}
+Remove-Module DISM > $null
+$WarningPreference = 'Continue'
+
+Write-Host

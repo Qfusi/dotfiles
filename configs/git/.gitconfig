@@ -8,8 +8,8 @@
 	prune = false
 [rebase]
 	autoStash = false
-[commit]
-	gpgsign = true
+# [commit]
+# 	gpgsign = true
 [push]
 	autoSetupRemote = true
 [diff]
@@ -47,3 +47,5 @@
 	yeet3 = reset --hard HEAD~
 [log]
 	date = relative
+[include]
+	path = .gitconfig.local
