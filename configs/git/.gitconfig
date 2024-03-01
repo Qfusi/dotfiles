@@ -8,8 +8,6 @@
 	prune = false
 [rebase]
 	autoStash = false
-# [commit]
-# 	gpgsign = true
 [push]
 	autoSetupRemote = true
 [diff]
@@ -29,15 +27,15 @@
 	ch = checkout
 	c = !git add -A && git commit -m
 	last = log -1 HEAD
-	lt = "!f() { git log --oneline --pretty=myformat --grep=''#$1''; }; f"
-	lta = "!f() { git log --oneline --pretty=myformat --grep=''#$1'' --author=$2; }; f"
+	lt = "!f() { git log --oneline --pretty=pretty --grep=''#$1''; }; f"
+	lta = "!f() { git log --oneline --pretty=pretty --grep=''#$1'' --author=$2; }; f"
 	lb = log --walk-reflogs
 	rao = remote add origin
 	cm = commit -m
 	pushitgood = push -u origin --all
-	lastw = log --since=1.weeks --oneline --pretty=myformat
+	lastw = log --since=1.weeks --oneline --pretty=pretty
 	lastwa = log --since=1.weeks --oneline --author
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit
+	lg = log --color --graph --pretty=pretty --abbrev-commit
 	rcp = "!f() { git log --since=$1.$2; }; f"
 	rcn = "!f() { git log -n $1; }; f"
 	exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
@@ -47,5 +45,9 @@
 	yeet3 = reset --hard HEAD~
 [log]
 	date = relative
+[format]
+    pretty = pretty
+[pretty]
+    pretty = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset
 [include]
 	path = .gitconfig.local

@@ -29,7 +29,9 @@ RefreshEnv
 
 pwsh -Command { Install-Module posh-git -Scope CurrentUser -Force } > $null
 pwsh -Command { Install-Module Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force } > $null
-choco install -y oh-my-posh firacode
+# choco install -y oh-my-posh
+choco install -y starship
+choco install -y firacode
 choco install -y nvm
 choco install -y zoxide fzf
 choco install -y gsudo ripgrep

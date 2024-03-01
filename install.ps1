@@ -1,4 +1,8 @@
+#Requires -RunAsAdministrator
+
 Write-Host "----- dotfiles installation -----`n" -ForegroundColor "Yellow"
+
+[Environment]::SetEnvironmentVariable("DOTFILES_PATH", $PSScriptRoot, "User")
 
 if (-not (Get-Module powershell-yaml -ListAvailable)) {
     Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
