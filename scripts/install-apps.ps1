@@ -35,6 +35,7 @@ choco install -y firacode
 choco install -y nvm
 choco install -y zoxide fzf
 choco install -y gsudo ripgrep
+choco install -y jq yq
 
 # ---------------------------------------------- #
 # IDEs ----------------------------------------- #
