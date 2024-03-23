@@ -18,21 +18,24 @@ choko install -y powertoys
 choco install -y insomnia-rest-api-client
 choco install -y sql-server-management-studio
 choco install -y rdcman
+
 choco install -y dotnet dotnet-sdk
+scoop install nvm
+refreshenv
+nvm install latest
 
 # ---------------------------------------------- #
 # Shell  --------------------------------------- #
 # ---------------------------------------------- #
 choco install -y microsoft-windows-terminal
 choco install -y powershell-core
-RefreshEnv
+refreshenv
 
 pwsh -Command { Install-Module posh-git -Scope CurrentUser -Force } > $null
 pwsh -Command { Install-Module Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force } > $null
 # choco install -y oh-my-posh
 choco install -y starship
 choco install -y firacode
-choco install -y nvm
 choco install -y zoxide fzf
 choco install -y gsudo ripgrep
 choco install -y jq yq
@@ -45,7 +48,7 @@ choco install -y jetbrains-rider
 choco install -y vscode
 
 if (prompt("Install vscode extensions") -eq $true) {
-    RefreshEnv
+    refreshenv
     $extensions = @(
         "adrianwilczynski.blazor-snippet-pack"
         "DotJoshJohnson.xml"

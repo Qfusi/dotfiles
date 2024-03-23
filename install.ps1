@@ -4,6 +4,8 @@ Write-Host "----- dotfiles installation -----`n" -ForegroundColor "Yellow"
 
 Start-Job -ScriptBlock { [Environment]::SetEnvironmentVariable("DOTFILES_PATH", $using:PSScriptRoot, "User") } > $null
 
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+
 if (-not (Get-Module powershell-yaml -ListAvailable)) {
     Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
     Install-Module powershell-yaml
