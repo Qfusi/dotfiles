@@ -47,7 +47,7 @@ choco install -y visualstudio2022professional
 choco install -y jetbrains-rider
 choco install -y vscode
 
-if (prompt("Install vscode extensions") -eq $true) {
+if (Show-Prompt("Install vscode extensions") -eq $true) {
     refreshenv
     $extensions = @(
         "adrianwilczynski.blazor-snippet-pack"

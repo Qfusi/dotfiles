@@ -31,6 +31,7 @@ plugins:
     order: 1
   create-symlinks:
     path: create-symlinks.ps1
+    prompt: true
     order: 2
   unbloat-windows:
     path: unbloat-windows.ps1
