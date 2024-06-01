@@ -1,4 +1,4 @@
-Write-Host "----- running installation -----`n" -ForegroundColor "Yellow"
+Write-Host "----- running installation -----`n" -ForegroundColor "Green"
 
 function Test-Command($CmdName) {
     return [bool](Get-Command -Name $CmdName -ErrorAction SilentlyContinue)
@@ -26,16 +26,23 @@ $scriptBlock = {
     $yaml.plugins.GetEnumerator() | Sort-Object { if ($_.Value.order -eq $null) { 1000 } else { $_.Value.order } } | ForEach-Object {
         if (($_.Value.prompt -eq $false -or $_.Value.prompt -eq $null) -or (Show-Prompt("Run $($_.Name) script") -eq $true)) {
             $path = Join-Path $ScriptRoot scripts $_.Value.Path
-            . $path $ScriptRoot
+            . $path
         }
     }
+    Exit
 }
 
-# Start-Job -ScriptBlock { [Environment]::SetEnvironmentVariable("DOTFILES_PATH", $using:PSScriptRoot, "User") } > $null
+[Environment]::SetEnvironmentVariable("DOTFILES_PATH", $PSScriptRoot, "User") 
 
 if (!(Test-Command -CmdName "scoop")) {
     Write-Host "No scoop installation found. Installing...`n" -ForegroundColor "Yellow"
     Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+    Write-Host "`n"
+}
+
+if (!(Test-Command -CmdName "git")) {
+    Write-Host "No git installation found. Installing...`n" -ForegroundColor "Yellow"
+    scoop install git
     Write-Host "`n"
 }
 
@@ -51,4 +58,4 @@ else {
     & $scriptBlock $PSScriptRoot
 }
 
-Write-Host "`n----- finished installation -----" -ForegroundColor "yellow"
+Write-Host "`n----- finished installation -----" -ForegroundColor "Green"

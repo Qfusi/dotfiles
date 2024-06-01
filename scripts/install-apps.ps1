@@ -1,54 +1,59 @@
 Write-Host "`n----- Installing apps -----`n" -ForegroundColor "Yellow"
 
+scoop bucket add extras
+scoop bucket add nonportable
+scoop bucket add sysinternals
+scoop bucket add nerd-fonts
+
 # ---------------------------------------------- #
 # Common tools  --------------------------------- #
 # ---------------------------------------------- #
-choco install -y googlechrome firefox
-choco install -y 7zip
-choco install -y paint.net
-choco install -y screentogif
-choco install -y zoomit
-choco install -y everything
-choco install -y notepadplusplus
-choko install -y powertoys
+scoop install googlechrome
+scoop install firefox
+scoop install 7zip
+scoop install paint.net
+scoop install screentogif
+scoop install everything
+scoop install notepadplusplus
+scoop install powertoys
 
 # ---------------------------------------------- #
 # Dev tools  ----------------------------------- #
 # ---------------------------------------------- #
-choco install -y insomnia-rest-api-client
-choco install -y sql-server-management-studio
-choco install -y rdcman
+scoop install insomnia
+scoop install nonportable/sql-server-management-studio-np
+scoop install sysinternals/rdcman
 
-choco install -y dotnet dotnet-sdk
+scoop install dotnet-sdk
 scoop install nvm
-refreshenv
 nvm install latest
 
 # ---------------------------------------------- #
 # Shell  --------------------------------------- #
 # ---------------------------------------------- #
-choco install -y microsoft-windows-terminal
-choco install -y powershell-core
-refreshenv
+scoop install windows-terminal
 
-pwsh -Command { Install-Module posh-git -Scope CurrentUser -Force } > $null
-pwsh -Command { Install-Module Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force } > $null
-# choco install -y oh-my-posh
-choco install -y starship
-choco install -y firacode
-choco install -y zoxide fzf
-choco install -y gsudo ripgrep
-choco install -y jq yq
+Install-Module posh-git -Scope CurrentUser -Force > $null
+Install-Module Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force > $null
+
+scoop install starship
+scoop install nerd-fonts/FiraCode
+scoop install eza
+scoop install zoxide 
+scoop install fzf
+scoop install gsudo
+scoop install ripgrep
+scoop install jq
+scoop install yq
 
 # ---------------------------------------------- #
 # IDEs ----------------------------------------- #
 # ---------------------------------------------- #
-choco install -y visualstudio2022professional
-choco install -y jetbrains-rider
-choco install -y vscode
+# choco install -y visualstudio2022professional
+scoop install rider
+scoop install vscode
 
 if (Show-Prompt("Install vscode extensions") -eq $true) {
-    refreshenv
     $extensions = @(
         "adrianwilczynski.blazor-snippet-pack"
         "DotJoshJohnson.xml"

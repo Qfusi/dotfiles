@@ -4,13 +4,13 @@ symlinks:
     target: powershell/Microsoft.PowerShell_profile.ps1
     scaffold: true
     force: true
-  oh-my-posh:
-    path: ~/AppData/Local/Programs/oh-my-posh/themes/star-adjusted.omp.json
-    target: oh-my-posh/star-adjusted.omp.json
-    scaffold: true
-    force: true
+  # oh-my-posh:
+  #   path: ~/AppData/Local/Programs/oh-my-posh/themes/star-adjusted.omp.json
+  #   target: oh-my-posh/star-adjusted.omp.json
+  #   scaffold: true
+  #   force: true
   windows-terminal:
-    path: ~/AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+    path: ~/scoop/apps/windows-terminal/current/settings/settings.json
     target: windows-terminal/settings.json
     force: true
   vscode:
@@ -29,13 +29,14 @@ plugins:
     path: install-apps.ps1
     prompt: true
     order: 1
+  configure-windows:
+    path: configure-windows.ps1
+    prompt: true
+    order: 2
   create-symlinks:
     path: create-symlinks.ps1
     prompt: true
-    order: 2
+    order: 3
   unbloat-windows:
     path: unbloat-windows.ps1
-    prompt: true
-  configure-windows:
-    path: configure-windows.ps1
     prompt: true
