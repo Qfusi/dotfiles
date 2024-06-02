@@ -1,4 +1,4 @@
-Write-Host "`n--- Unbloating Windows ---`n" -ForegroundColor "Yellow"
+Write-Host "`n--- Unbloating Windows ---`n" -ForegroundColor Cyan
 
 $scriptBlock = {
 
@@ -95,4 +95,4 @@ $scriptBlock = {
 
 Start-Process pwsh -ArgumentList "-Command & { $($scriptBlock -replace '"', '\"' ) }" -Wait -Verb runAs
 
-Write-Host
+Write-Host "`n----- Done unbloating windows -----`n" -ForegroundColor Cyan

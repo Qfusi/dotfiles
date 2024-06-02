@@ -10,11 +10,11 @@ symlinks:
   #   scaffold: true
   #   force: true
   windows-terminal:
-    path: ~/scoop/apps/windows-terminal/current/settings/settings.json
+    path: ~/scoop/persist/windows-terminal/settings/settings.json
     target: windows-terminal/settings.json
     force: true
   vscode:
-    path: ~/AppData/Roaming/Code/User/
+    path: ~/scoop/persist/vscode/data/user-data/User/
     target: vscode/*
     force: true
   git-local:

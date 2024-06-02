@@ -1,4 +1,4 @@
-Write-Host "`n----- Installing apps -----`n" -ForegroundColor "Yellow"
+Write-Host "`n----- Installing apps -----`n" -ForegroundColor Cyan
 
 scoop bucket add extras
 scoop bucket add nonportable
@@ -53,7 +53,7 @@ scoop install yq
 scoop install rider
 scoop install vscode
 
-if (Show-Prompt("Install vscode extensions") -eq $true) {
+if (Show-Prompt("`nInstall vscode extensions") -eq $true) {
     $extensions = @(
         "adrianwilczynski.blazor-snippet-pack"
         "DotJoshJohnson.xml"
@@ -81,4 +81,4 @@ if (Show-Prompt("Install vscode extensions") -eq $true) {
     }
 }
 
-Write-Host
+Write-Host "`n----- Done installing apps -----`n" -ForegroundColor Cyan

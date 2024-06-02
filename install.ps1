@@ -1,4 +1,4 @@
-Write-Host "----- running installation -----`n" -ForegroundColor "Green"
+Write-Host "----- running installation -----`n" -ForegroundColor Green
 
 function Test-Command($CmdName) {
     return [bool](Get-Command -Name $CmdName -ErrorAction SilentlyContinue)
@@ -29,28 +29,35 @@ $scriptBlock = {
             . $path
         }
     }
+
+    New-Item -Path $ScriptRoot\\config\\git -Name ".gitconfig.local" -ItemType "file" -ErrorAction SilentlyContinue
+    if ($?) {
+        Write-Information "Creating .gitconfig.local in '$ScriptRoot\config\git'"
+    }
+    else {
+        Write-Warning "Couldn't create .config.local in '$ScriptRoot\config\git'"
+        Write-Warning "$($Error[0].ToString())"
+    }
+
     Exit
 }
 
 [Environment]::SetEnvironmentVariable("DOTFILES_PATH", $PSScriptRoot, "User") 
 
 if (!(Test-Command -CmdName "scoop")) {
-    Write-Host "No scoop installation found. Installing...`n" -ForegroundColor "Yellow"
+    Write-Host "No scoop installation found. Installing...`n" -ForegroundColor Yellow
     Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
-    Write-Host "`n"
 }
 
 if (!(Test-Command -CmdName "git")) {
-    Write-Host "No git installation found. Installing...`n" -ForegroundColor "Yellow"
+    Write-Host "No git installation found. Installing...`n" -ForegroundColor Yellow
     scoop install git
-    Write-Host "`n"
 }
 
 if (!((Get-Host | Select-Object -ExpandProperty Version) -like "7.*")) {
     if (!(Test-Command -CmdName "pwsh")) {
-        Write-Host "No powershell-core installation found. Installing...`n" -ForegroundColor "Yellow"
+        Write-Host "No powershell-core installation found. Installing...`n" -ForegroundColor Yellow
         scoop install pwsh
-        Write-Host "`n"
     }
     pwsh -Command $scriptBlock -Args $PSScriptRoot
 }
@@ -58,4 +65,4 @@ else {
     & $scriptBlock $PSScriptRoot
 }
 
-Write-Host "`n----- finished installation -----" -ForegroundColor "Green"
+Write-Host "`n----- finished installation -----" -ForegroundColor Green

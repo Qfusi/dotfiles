@@ -1,4 +1,4 @@
-Write-Host "`n----- Configuring windows -----`n" -ForegroundColor "Yellow"
+Write-Host "`n----- Configuring windows -----`n" -ForegroundColor Cyan
 
 $scriptBlock = {
 	#--- Windows Features ---
@@ -57,4 +57,4 @@ $scriptBlock = {
 
 Start-Process pwsh -ArgumentList "-Command & { $($scriptBlock -replace '"', '\"' ) }" -Wait -Verb runAs
 
-Write-Host
+Write-Host "`n----- Done configuring windows -----`n" -ForegroundColor Cyan

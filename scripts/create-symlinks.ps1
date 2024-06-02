@@ -1,4 +1,4 @@
-Write-Host "`n----- Creating symlinks -----`n" -ForegroundColor "Yellow"
+Write-Host "`n----- Creating symlinks -----`n" -ForegroundColor Cyan
 
 $yaml.symlinks.GetEnumerator() | ForEach-Object {
     if ($_.Value.scaffold -eq $true) {
@@ -29,12 +29,12 @@ $yaml.symlinks.GetEnumerator() | ForEach-Object {
     }
 
     if ($?) {
-        Write-Host "- '$($_.Name)' created: '$($_.Value.path)' -> 'configs/$($_.Value.target)'" -ForegroundColor "Green"
+        Write-Host "- '$($_.Name)' created: '$($_.Value.path)' -> 'configs/$($_.Value.target)'" -ForegroundColor Green
     }
     else {
-        Write-Host "- '$($_.Name)' not created:" -ForegroundColor "Red"
-        Write-Host "    $($Error[0].ToString())" -ForegroundColor "Red"
+        Write-Warning "- '$($_.Name)' not created:"
+        Write-Warning "    $($Error[0].ToString())"
     }
 }
 
-Write-Host
+Write-Host "`n----- Done creating symlinks -----`n" -ForegroundColor Cyan
