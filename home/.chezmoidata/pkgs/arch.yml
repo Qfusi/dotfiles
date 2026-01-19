@@ -1,0 +1,8 @@
+pkgs:
+  arch:
+    universal:
+      # Essentials
+      - "chezmoi"
+      - "waypaper"
+      - "awww"
+      
