@@ -33,8 +33,3 @@ fi
 echo 'INSTALLING PACKAGES...'
 yay -S {{ $pkgs | quoteList | join " " }} --needed --noconfirm
 {{ end }}
-
-##########################################
-
-echo 'SETTING UP SERVICES...'
-systemctl list-unit-files "cronie.service" &>/dev/null && sudo systemctl enable --now cronie.service

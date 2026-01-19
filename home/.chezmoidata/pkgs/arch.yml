@@ -4,5 +4,5 @@ pkgs:
       # Essentials
       - "chezmoi"
       - "waypaper"
-      - "awww"
+      - "swaybg"
       
