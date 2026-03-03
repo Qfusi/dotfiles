@@ -3,6 +3,5 @@ pkgs:
     universal:
       # Essentials
       - "chezmoi"
-      - "waypaper"
-      - "swaybg"
+      - "hyprland"
       

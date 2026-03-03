@@ -1,0 +1,95 @@
+[user]
+	email = {{ .git.email }}
+	name = {{ .git.username }}
+	signingKey = {{ .git.gpgkey }}
+
+[github]
+  	user = {{ .git.username }}
+
+[core]
+	editor = code --wait
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[gpg]
+	program = gpg
+
+[commit]
+	gpgsign = true
+
+[push]
+	autoSetupRemote = true
+
+[log]
+	date = iso
+
+[diff]
+	tool = vscode
+
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+	tool = vscode
+
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+
+[format]
+    pretty = pretty
+
+[pretty]
+    pretty = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset
+
+[alias]
+	st = status --short
+	br = branch -vv
+	ch = checkout
+	c = !git add -A && git commit -m
+	last = log -1 HEAD
+	lt = "!f() { git log --oneline --pretty=pretty --grep=''#$1''; }; f"
+	lta = "!f() { git log --oneline --pretty=pretty --grep=''#$1'' --author=$2; }; f"
+	lb = log --walk-reflogs
+	rao = remote add origin
+	cm = commit -m
+	pushitgood = push -u origin --all
+	lastw = log --since=1.weeks --oneline --pretty=pretty
+	lastwa = log --since=1.weeks --oneline --author
+	lg = log --color --graph --pretty=pretty --abbrev-commit
+	rcp = "!f() { git log --since=$1.$2; }; f"
+	rcn = "!f() { git log -n $1; }; f"
+	exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
+	parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
+	yeetsoft = "!f() { git reset --soft HEAD~$1; }; f"
+	yeet = "!f() { git reset HEAD~$1; }; f"
+	yeethard = "!f() { git reset --hard HEAD~$1; }; f"
+
+[color]
+    ui = auto
+    branch = auto
+    decorate = auto
+    diff = auto
+    grep = auto
+    interactive = auto
+    showbranch = auto
+    pager = true
+
+[color "status"]
+    added = "#a6e3a1" bold
+    changed = "#f9e2af" bold
+    untracked = "#f38ba8"
+    branch = "#89b4fa" bold reverse
+    nobranch = "#f38ba8" bold
+
+[color "diff"]
+    meta = "#cba6f7"
+    frag = "#fab387" bold
+    func = "#94e2d5"
+    context = "#6c7086"
+    old = "#f38ba8" bold
+    new = "#a6e3a1" bold
+    whitespace = "#f38ba8" reverse
