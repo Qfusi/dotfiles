@@ -4,4 +4,8 @@ pkgs:
       # Essentials
       - "chezmoi"
       - "hyprland"
+
+      # Utilities
+      - "cava"
+      - "cliphist"
       
