@@ -14,6 +14,7 @@ alias shutdown='systemctl poweroff'
 alias v='$EDITOR'
 alias vim='$EDITOR'
 alias wifi='nmtui'
+alias cd='z'
 
 # -----------------------------------------------------
 # Window Managers

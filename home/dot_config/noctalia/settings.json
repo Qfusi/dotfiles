@@ -34,7 +34,7 @@
         "visualizerType": "mirrored",
         "volumeFeedback": false,
         "volumeFeedbackSoundFile": "",
-        "volumeOverdrive": false,
+        "volumeOverdrive": true,
         "volumeStep": 5
     },
     "bar": {
@@ -52,15 +52,21 @@
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
-        "marginHorizontal": 4,
-        "marginVertical": 10,
+        "marginHorizontal": 18,
+        "marginVertical": 4,
+        "middleClickAction": "none",
+        "middleClickCommand": "",
+        "middleClickFollowMouse": false,
         "monitors": [
         ],
-        "mouseWheelAction": "none",
-        "mouseWheelWrap": true,
+        "mouseWheelAction": "workspace",
+        "mouseWheelWrap": false,
         "outerCorners": true,
         "position": "top",
-        "reverseScroll": false,
+        "reverseScroll": true,
+        "rightClickAction": "controlCenter",
+        "rightClickCommand": "",
+        "rightClickFollowMouse": true,
         "screenOverrides": [
         ],
         "showCapsule": true,
@@ -105,6 +111,7 @@
                     "diskPath": "/",
                     "iconColor": "none",
                     "id": "SystemMonitor",
+                    "showCpuCores": false,
                     "showCpuFreq": false,
                     "showCpuTemp": true,
                     "showCpuUsage": true,
@@ -122,16 +129,6 @@
                     "usePadding": false
                 },
                 {
-                    "colorizeIcons": false,
-                    "hideMode": "hidden",
-                    "id": "ActiveWindow",
-                    "maxWidth": 145,
-                    "scrollingMode": "hover",
-                    "showIcon": true,
-                    "textColor": "none",
-                    "useFixedWidth": false
-                },
-                {
                     "compactMode": true,
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
@@ -146,6 +143,16 @@
                     "textColor": "none",
                     "useFixedWidth": false,
                     "visualizerType": "linear"
+                },
+                {
+                    "colorizeIcons": false,
+                    "hideMode": "hidden",
+                    "id": "ActiveWindow",
+                    "maxWidth": 145,
+                    "scrollingMode": "hover",
+                    "showIcon": true,
+                    "textColor": "none",
+                    "useFixedWidth": false
                 }
             ],
             "right": [
@@ -159,6 +166,15 @@
                     "id": "Tray",
                     "pinned": [
                     ]
+                },
+                {
+                    "defaultSettings": {
+                        "currentIconName": "world-download",
+                        "hideOnZero": false,
+                        "updateIntervalMinutes": 30,
+                        "updateTerminalCommand": "foot -e"
+                    },
+                    "id": "plugin:update-count"
                 },
                 {
                     "hideWhenZero": false,
@@ -257,7 +273,6 @@
             }
         ],
         "diskPath": "/",
-        "openAtMouseOnBarRightClick": true,
         "position": "close_to_bar_button",
         "shortcuts": {
             "left": [
@@ -302,7 +317,7 @@
         "backgroundOpacity": 1,
         "colorizeIcons": false,
         "deadOpacity": 0.6,
-        "displayMode": "auto_hide",
+        "displayMode": "always_visible",
         "dockType": "static",
         "enabled": true,
         "floatingRatio": 1,
@@ -313,7 +328,7 @@
         "inactiveIndicators": false,
         "indicatorColor": "primary",
         "indicatorOpacity": 0.6,
-        "indicatorThickness": 3,
+        "indicatorThickness": 6,
         "launcherIconColor": "none",
         "launcherPosition": "end",
         "monitors": [
@@ -322,7 +337,7 @@
         "pinnedApps": [
         ],
         "pinnedStatic": false,
-        "position": "bottom",
+        "position": "left",
         "showDockIndicator": false,
         "showLauncherIcon": false,
         "sitOnFrame": false,
@@ -339,7 +354,8 @@
         "clockFormat": "hh\\nmm",
         "clockStyle": "custom",
         "compactLockScreen": false,
-        "dimmerOpacity": 0.25,
+        "dimmerOpacity": 0.4,
+        "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
         "enableShadows": true,
@@ -393,9 +409,9 @@
     },
     "hooks": {
         "darkModeChange": "",
-        "enabled": false,
-        "performanceModeDisabled": "",
-        "performanceModeEnabled": "",
+        "enabled": true,
+        "performanceModeDisabled": "~/.config/hypr/scripts/toggle-gamemode.sh 0",
+        "performanceModeEnabled": "~/.config/hypr/scripts/toggle-gamemode.sh 1",
         "screenLock": "",
         "screenUnlock": "",
         "session": "",
@@ -404,7 +420,7 @@
     },
     "idle": {
         "customCommands": "[]",
-        "enabled": false,
+        "enabled": true,
         "fadeDuration": 5,
         "lockCommand": "",
         "lockTimeout": 660,
@@ -421,7 +437,7 @@
         "firstDayOfWeek": -1,
         "hideWeatherCityName": false,
         "hideWeatherTimezone": false,
-        "name": "Tokyo",
+        "name": "Göteborg",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,
@@ -432,13 +448,14 @@
     },
     "network": {
         "airplaneModeEnabled": false,
+        "bluetoothAutoConnect": true,
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "bluetoothRssiPollIntervalMs": 60000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
         "networkPanelView": "wifi",
-        "wifiDetailsViewMode": "list",
+        "wifiDetailsViewMode": "grid",
         "wifiEnabled": true
     },
     "nightLight": {
@@ -500,7 +517,7 @@
         "autoUpdate": false
     },
     "sessionMenu": {
-        "countdownDuration": 10000,
+        "countdownDuration": 5000,
         "enableCountdown": true,
         "largeButtonsLayout": "single-row",
         "largeButtonsStyle": true,
@@ -559,7 +576,7 @@
         "showHeader": true,
         "showKeybinds": true
     },
-    "settingsVersion": 54,
+    "settingsVersion": 56,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,
@@ -620,25 +637,33 @@
             {
                 "enabled": true,
                 "id": "steam"
+            },
+            {
+                "enabled": true,
+                "id": "walker"
+            },
+            {
+                "enabled": true,
+                "id": "cava"
             }
         ],
         "enableUserTheming": false
     },
     "ui": {
         "boxBorderEnabled": false,
-        "fontDefault": "DejaVu LGC Sans",
+        "fontDefault": "JetBrainsMono NF",
         "fontDefaultScale": 1,
-        "fontFixed": "monospace",
+        "fontFixed": "FiraCode Nerd Font",
         "fontFixedScale": 1,
-        "panelBackgroundOpacity": 1,
+        "panelBackgroundOpacity": 0.9,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "attached",
         "settingsPanelSideBarCardStyle": false,
         "tooltipsEnabled": true
     },
     "wallpaper": {
-        "automationEnabled": false,
-        "directory": "/home/kuf/Pictures",
+        "automationEnabled": true,
+        "directory": "/home/kuf/Pictures/wallpapers/4K",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
@@ -652,7 +677,7 @@
         "overviewEnabled": false,
         "overviewTint": 0.6,
         "panelPosition": "follow_bar",
-        "randomIntervalSec": 300,
+        "randomIntervalSec": 900,
         "setWallpaperOnAllMonitors": true,
         "showHiddenFiles": false,
         "skipStartupTransition": false,
@@ -663,7 +688,7 @@
         "transitionType": "fade",
         "useSolidColor": false,
         "useWallhaven": false,
-        "viewMode": "single",
+        "viewMode": "browse",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",

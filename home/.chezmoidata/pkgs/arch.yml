@@ -4,8 +4,42 @@ pkgs:
       # Essentials
       - "chezmoi"
       - "hyprland"
+      - "kitty"
+      - "fish"
+      - "zen-browser-bin"
+      - "nautilus"
+
+      # Development
+      - "neovim"
+      - "vim"
+      - "visual-studio-code-bin"
 
       # Utilities
       - "cava"
       - "cliphist"
-      
+      - "grimblast"
+
+      # CLI tools
+      - "zoxide"
+      - "eza"
+      - "jq"
+      - "gh"
+
+      # CLI fun
+      - "fastfetch"
+      - "figlet"
+
+      # Monitoring
+      - "btop"
+      - "dysk"
+
+      # Apps
+      - "spotify"
+      - "discord"
+      - "steam"
+
+      # Fonts
+      - "noto-fonts-emoji"
+      - "ttf-google-sans"
+      - "ttf-jetbrains-mono-nerd"
+      - "ttf-nerd-fonts-symbols"

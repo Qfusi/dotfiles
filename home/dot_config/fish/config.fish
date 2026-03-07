@@ -4,3 +4,5 @@ if status is-login
         exec start-hyprland
     end
 end
+
+zoxide init fish | source
