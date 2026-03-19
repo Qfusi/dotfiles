@@ -15,7 +15,6 @@ pkgs:
       - "visual-studio-code-bin"
 
       # Utilities
-      - "cava"
       - "cliphist"
       - "grimblast"
 
@@ -37,6 +36,7 @@ pkgs:
       - "spotify"
       - "discord"
       - "steam"
+      - "rapidraw-bin"
 
       # Fonts
       - "noto-fonts-emoji"
